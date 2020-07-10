@@ -17,7 +17,7 @@
   <script src="/dist/RTCMultiConnection.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/node_modules/fbr/FileBufferReader.js"></script>
-
+  <link rel="stylesheet" href="/demos/css/main.css">
   <script src="/node_modules/canvas-designer/dev/webrtc-handler.js"></script>
   <script src="/node_modules/canvas-designer/canvas-designer-widget.js"></script>
   <script src="/demos/js/emojionearea.min.js"></script>
@@ -199,6 +199,14 @@ hr {
    
 
     <canvas id="temp-stream-canvas" style="display: none;"></canvas>
+	<div class="video-contianer">
+                <video id="video" autoplay muted playsinline></video>
+                <div id="video-stat"></div>
+            </div>
+            <div class="buttons">
+                <button id="startButton">Start Screen Sharing</button>
+                <button id="stopButton" disabled>Stop Screen Sharing</button>
+            </div>
 </div>
 
 <div style="margin-top: 20px;position: absolute;bottom: 0;left:1220px;background: rgb(118, 248, 237); padding-bottom: 0; width: 20%">
@@ -217,7 +225,8 @@ hr {
     </div>
 </div>
 </article>
-
+ <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="/demos/js/main.js"></script>
 <script>
 (function() {
     var params = {},
